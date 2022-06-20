@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+    <!-- Bài tập 3 -->
+    <form action="">
+        <div class="container w-50 rounded shadow mt-5 p-3" style="height: 300px; background-image: url(./img.jpg)">
+          <h3 class="my-3">💰 Tính thuế thu nhập cá nhân</h3>
+          <div class="form-group row">
+            <div class="col-4">
+              <input id="HoTen" class="mr-3 p-1 form-control" placeholder="Nhập Họ Tên" />
+            </div>
+            <div class="col-4">
+              <input id="thuNhapNam" type="number" class="mr-3 p-1 form-control" placeholder="Tổng thu nhập năm">
+            </div>
+            <div class="col-4">
+              <input id="nguoiPhuThuoc" type="number" class="mr-3 p-1 form-control" placeholder="Số người phụ thuộc" />
+            </div>
+          </div>
+          <button id="btnTinhTienThue" class="btn btn-primary btn-lg rounded-pill mt-4 px-4 mb-4">Tính Tiền Thuế</button>
+          <div class="alert-success form-control" id="ketQua_b3" style="font-weight: bolder;">👉</div>
+        </div>
+        </form>
+  
+        <!-- Bài tập 4 -->
+        <form action="">
+        <div class="container w-50 rounded shadow mt-5 p-3" style="height: 320px; background-image: url(./img.jpg)">
+          <h3 class="my-3">🕸️ Tính tiền cáp</h3>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <select name="" id="chonKH" class="form-control" onchange="ketNoiDN()">
+                <option value="chon">Chọn loại khách hàng</option>
+                <option value="nhaDan">Nhà Dân</option>
+                <option value="doanhNghiep">Doanh Nghiệp</option>
+              </select>
+            </div>
+            <div class="form-group col-md-4">
+              <input id="maKH" type="text" class="form-control" placeholder="Nhập mã khách hàng"/>
+            </div>
+            <div class="form-group col-md-4">
+              <input id="soKenhCaoCap" type="number" class="form-control" placeholder="Số kênh cao cấp"/>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group col-md-4">
+              <input id="soKN" type="number" class="form-control" style="display: none" placeholder="Số kết nối"/>
+            </div>
+          </div>
+          <button id="btnTinhTienCap" class="btn btn-primary btn-lg rounded-pill mt-4 px-5 mb-4">Tính tiền cáp</button>
+          <div class="alert-success form-control" id="ketQua_b4" style="font-weight: bolder;">👉</div>
+        </div>
+        </form>
+
+        <script>
+            function ketNoiDN(doanhNghiep){
+                var kiemTra = domID("chonKH").value;
+                if (kiemTra === "doanhNghiep") {
+                    document.getElementById("soKN").style.display = "block";
+                } else {
+                    document.getElementById("soKN").style.display = "none";
+                }
+            }
+        </script>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
